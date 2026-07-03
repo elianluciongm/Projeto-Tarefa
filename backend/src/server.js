@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
 app.use(tarefaRoutes);
 
 const PORT = process.env.PORT || 3000;
-
 async function iniciarServidor() {
     try {
         await sequelize.authenticate();
@@ -34,7 +33,8 @@ async function iniciarServidor() {
             console.log(`Servidor rodando na porta ${PORT}`);
         });
     } catch (error) {
-        console.error("Erro ao conectar no banco:", error.message);
+        console.error("Erro ao conectar no banco:");
+        console.error(error);
     }
 }
 
